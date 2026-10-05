@@ -22,3 +22,16 @@
             (setf current word))))
     (push (or current "") lines)
     (nreverse lines)))
+
+(defun wrap-file (path width)
+    (with-open-file (in path)
+        (loop for line = (read-line in nil)
+            while line
+            do (dolist (wrapped (wrap-line line width))
+                (write-line wrapped)))))
+
+(let ((path (first ext:*args*))
+      (width (second ext:*args*)))
+  (if path
+      (wrap-file path (if width (parse-integer width) 72))
+      (write-line "usage: clisp wrap.lisp FILE [WIDTH]")))

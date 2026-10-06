@@ -1,7 +1,7 @@
 clisp-plain-wrapper
 ===================
 
-Wrap plain text files to be readable with a fixed width.
+Wrap plain text files to be readable with a fixed width. (Made before I realized fold exists.)
 
 * wraps at 72 columns by default
 * keeps blank lines, so paragraphs stay separated

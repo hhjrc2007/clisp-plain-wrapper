@@ -8,6 +8,8 @@ Wrap plain text files to be readable with a fixed width.
 * wraps at 72 columns by default
 * keeps blank lines, so paragraphs stay separated
 * words longer than the width are left unbroken
+* keeps each line's indentation on the lines wrapped from it
+* measures width in display columns (wide characters count as two)
 
 Usage
 -----
